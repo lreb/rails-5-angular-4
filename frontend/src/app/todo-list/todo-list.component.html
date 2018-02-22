@@ -1,17 +1,13 @@
 
-<div class="panel panel-default" style="margin-top:10px;">
-<div class="panel-heading">
-    Todos
-</div>
-<div class="panel-body" style="position:relative">
+
+    <h4>Todos</h4>
+
     <div class="table-responsive">
         <table class="table">
             <thead>
                 <tr>
-                    <th>Actions</th>
-                    <th *ngFor="let column of columns">
-
-                    </th>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
                 </tr>
             </thead>
             <tbody>
@@ -19,16 +15,7 @@
                 <tr *ngFor="let row of rows">
                 	<td>{{row.id}}</td>
                 	<td>{{row.name}}</td>
-                	
-                	
-                    <!--button (click)="delete(row['id'])">delete</button> ||
-                    <button (click)="update(row['id'])">update</button>
-
-                    <td *ngFor="let column of columns">
-
-                    </td-->
                 </tr>
             </tbody>
         </table>
     </div>
-</div>
