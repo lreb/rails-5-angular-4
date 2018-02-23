@@ -1,0 +1,28 @@
+<h3>
+  Create new account!
+</h3>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" [(ngModel)]="account.email"  formControlName="email">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" placeholder="Password" [(ngModel)]="account.password" formControlName="password">
+    </div>
+    <div class="form-group">
+        <label for="passwordConfirmation">Confirm Password</label>
+        <input type="password" class="form-control" id="passwordConfirmation" placeholder="Password confirmation" [(ngModel)]="account.password_confirmation" formControlName="passwordConfirmation">
+    </div>
+    <div class="alert alert-danger" *ngIf="form.controls.passwordConfirmation.errors?.MatchPassword">Password not match</div>
+    <div class="form-check">
+      <label class="form-check-label">
+        <input type="checkbox" class="form-check-input" [(ngModel)]="acceptedConditions" [ngModelOptions]="{standalone: true}">
+        I accept terms and conditions
+      </label>
+    </div>
+    <div class="alert alert-danger" *ngIf="showErrorMessage">{{errorMessage}}</div>
+    <button type="submit" class="btn btn-primary" [disabled]="!acceptedConditions || !form.valid" >Create account</button>
+  </form>
