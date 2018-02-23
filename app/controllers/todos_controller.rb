@@ -16,7 +16,7 @@ class TodosController < ApplicationController
   # POST /todos
   def create
     @todo = Todo.new(todo_params)
-
+    puts todo_params
     if @todo.save
       render json: @todo, status: :created, location: @todo
     else
@@ -46,6 +46,7 @@ class TodosController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def todo_params
-      params.require(:todo).permit(:name)
+      params.permit(:name)
+      #params.require(:todo).permit(:name)
     end
 end

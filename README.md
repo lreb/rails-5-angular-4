@@ -22,3 +22,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+*Migrations
+rails g model UserAccount email:string password_digest:string password_reminder_token:string password_reminder_expire:timestamp email_confirmation_token:boolean account_confirmed:boolean  account_active:boolean

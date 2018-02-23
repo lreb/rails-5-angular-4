@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180222051211) do
+ActiveRecord::Schema.define(version: 20180222230321) do
 
   create_table "todos", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_accounts", force: :cascade do |t|
+    t.string "email"
+    t.string "password_digest"
+    t.string "password_reminder_token"
+    t.datetime "password_reminder_expire"
+    t.string "email_confirmation_token"
+    t.boolean "account_confirmed", default: false
+    t.boolean "account_active", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
