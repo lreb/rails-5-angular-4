@@ -25,3 +25,7 @@ Things you may want to cover:
 
 *Migrations
 rails g model UserAccount email:string password_digest:string password_reminder_token:string password_reminder_expire:timestamp email_confirmation_token:string account_confirmed:boolean  account_active:boolean
+
+
+# sources
+https://gorails.com/deploy/ubuntu/16.04
