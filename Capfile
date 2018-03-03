@@ -27,17 +27,17 @@ install_plugin Capistrano::SCM::Git
 #   https://github.com/capistrano/passenger
 #
 # require "capistrano/rvm"
-# require "capistrano/rbenv"
+require "capistrano/rbenv"
 # require "capistrano/chruby"
-# require "capistrano/bundler"
+require "capistrano/bundler"
 #require "capistrano/rails/assets"
 require "capistrano/rails/migrations"
-# require "capistrano/passenger"
+require "capistrano/passenger"
 
 # Deploy Updates
 # https://gorails.com/deploy/ubuntu/16.04
-require 'capistrano/rails'
-require 'capistrano/passenger'
+#require 'capistrano/rails'
+#require 'capistrano/passenger'
 
 # If you are using rbenv add these lines:
 require 'capistrano/rbenv'
