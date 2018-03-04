@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { PasswordValidation } from '../helpers/PasswordValidation';
 import { ApiService } from '../api.service';
-
+import { Account } from '../models/account';
 @Component({
   selector: 'app-account-new',
   templateUrl: './account-new.component.html',
@@ -13,13 +13,16 @@ export class AccountNewComponent implements OnInit {
   acceptedConditions: boolean;
   errorMessage: '';
   showErrorMessage: boolean;
-  account: object = {
-    email: '',
+  public account: Account;
+  
+  /* = {
+    email: string,
     password: '',
     password_confirmation: ''
-  };
+  };*/
   constructor(private formBuilder: FormBuilder, private apiService: ApiService) {
     this.acceptedConditions = false;
+    this.account = new Account();
   }
 
   ngOnInit() {
@@ -30,6 +33,7 @@ export class AccountNewComponent implements OnInit {
     }, {
       validator: PasswordValidation.MatchPassword // validate if password match
     });
+    console.log(this.account);
   }
   onSubmit() {
     if (this.form.valid) {
