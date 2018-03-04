@@ -3,7 +3,7 @@ class JsonWebToken
 		# takes three parameters -- the user id, the expiration time (1 day), and the unique base key of your Rails application -- to create a unique token
 		# we must set all important values that we want to return in jwt
 		def encode(payload, exp = 24.year.from_now) 
-			payload[:iss] = 'app.facware.com'
+			payload[:iss] = 'masterapi.facware.com'
 			payload[:sub] = 'api rails base'
 			payload[:exp] = exp.to_i 
 			payload[:aud] = 'All' #to identify the audience, e.g. myapp.com domain
