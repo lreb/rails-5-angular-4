@@ -10,6 +10,8 @@ set :repo_url, "git@github.com:lreb/rails-5-angular-4.git"
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, "/home/deploy/facware-master" 
 
+set :passenger_environment_variables, { 'PASSENGER_INSTANCE_REGISTRY_DIR' => 'YOUR_NEW_DIRECTORY' }
+
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
 
@@ -37,3 +39,8 @@ append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/syst
 
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
+
+# If you want to restart using `touch tmp/restart.txt`, add this to your config/deploy.rb:
+# set :passenger_restart_with_touch, true
+# If you want to restart using `passenger-config restart-app`, add this to your config/deploy.rb:
+set :passenger_restart_with_touch, false # Note that `nil` is NOT the same as `false` here
