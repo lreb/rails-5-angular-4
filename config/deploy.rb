@@ -8,7 +8,7 @@ set :repo_url, "git@github.com:lreb/rails-5-angular-4.git"
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, "/home/deploy/facware-master" 
+set :deploy_to, "/home/deploy/apps/facware-master" 
 # Set environmnets
 # set :passenger_environment_variables, { 'PASSENGER_INSTANCE_REGISTRY_DIR' => 'YOUR_NEW_DIRECTORY' }
 
