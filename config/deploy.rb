@@ -43,4 +43,4 @@ append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/syst
 # If you want to restart using `touch tmp/restart.txt`, add this to your config/deploy.rb:
 # set :passenger_restart_with_touch, true
 # If you want to restart using `passenger-config restart-app`, add this to your config/deploy.rb:
-set :passenger_restart_with_touch, false # Note that `nil` is NOT the same as `false` here
+# set :passenger_restart_with_touch, false # Note that `nil` is NOT the same as `false` here
