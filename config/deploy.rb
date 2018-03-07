@@ -9,8 +9,8 @@ set :repo_url, "git@github.com:lreb/rails-5-angular-4.git"
 
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, "/home/deploy/facware-master" 
-
-set :passenger_environment_variables, { 'PASSENGER_INSTANCE_REGISTRY_DIR' => 'YOUR_NEW_DIRECTORY' }
+# Set environmnets
+# set :passenger_environment_variables, { 'PASSENGER_INSTANCE_REGISTRY_DIR' => 'YOUR_NEW_DIRECTORY' }
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
