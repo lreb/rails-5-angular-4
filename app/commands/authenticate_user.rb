@@ -1,4 +1,5 @@
 class AuthenticateUser 
+	require	'../../lib/json_web_token.rb'
 	prepend SimpleCommand 
 	# takes the parameters and initializes a class instance
 	def initialize(email, password) 
