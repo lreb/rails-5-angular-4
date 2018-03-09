@@ -32,11 +32,11 @@ require "capistrano/rbenv"
 require "capistrano/bundler"
 #require "capistrano/rails/assets"
 require "capistrano/rails/migrations"
-require "capistrano/passenger"
+#require "capistrano/passenger"
 
 # Deploy Updates
 # https://gorails.com/deploy/ubuntu/16.04
-#require 'capistrano/rails'
+require 'capistrano/rails'
 #require 'capistrano/passenger'
 
 # If you are using rbenv add these lines:
@@ -49,6 +49,8 @@ set :rbenv_ruby, '2.5.0'
 # set :rvm_type, :user
 # set :rvm_ruby_version, '2.5.0'
 
+require 'capistrano/puma'
 
 # Load custom tasks from `lib/capistrano/tasks` if you have any defined
 Dir.glob("lib/capistrano/tasks/*.rake").each { |r| import r }
+
