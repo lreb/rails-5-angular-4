@@ -17,7 +17,9 @@ set :use_sudo,        false
 set :stage,           :production
 set :deploy_via,      :remote_cache
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, "/home/deploy/facware-master" 
+set :deploy_to, "/home/deploy/apps/facware-master" 
+# Set environmnets
+# set :passenger_environment_variables, { 'PASSENGER_INSTANCE_REGISTRY_DIR' => 'YOUR_NEW_DIRECTORY' }
 
 set :puma_bind,       "unix://#{shared_path}/tmp/sockets/#{fetch(:application)}-puma.sock"
 set :puma_state,      "#{shared_path}/tmp/pids/puma.state"
@@ -114,3 +116,7 @@ namespace :puma do
     after  :finishing,    :restart
   end
   
+# If you want to restart using `touch tmp/restart.txt`, add this to your config/deploy.rb:
+# set :passenger_restart_with_touch, true
+# If you want to restart using `passenger-config restart-app`, add this to your config/deploy.rb:
+# set :passenger_restart_with_touch, false # Note that `nil` is NOT the same as `false` here
