@@ -2,10 +2,10 @@ class AccountController < ApplicationController
   skip_before_action :authenticate_request, :only => [:create]
   
   def create
-      if((UserAccount.find_by email: user_params[:email]) != nil)
+      if((Account.find_by email: user_params[:email]) != nil)
         render json: { status: 'The email is already in use' }, status: :bad_request
       else
-      user = UserAccount.new(user_params)
+      user = Account.new(user_params)
         if user.save
           #SessionsController.create(user_params[:email],user_params[:password])
           

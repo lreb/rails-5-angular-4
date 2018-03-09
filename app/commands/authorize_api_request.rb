@@ -14,7 +14,7 @@ class AuthorizeApiRequest
 	def user 
 		# In the first line, the ||= operator is used to assign @user by assigning "if not nil". 
 		# Basically, if the User.find() returns an empty set or decoded_auth_token returns false, @user will be nil.
-		@user ||= UserAccount.find(decoded_auth_token[:user_id]) if decoded_auth_token 
+		@user ||= Account.find(decoded_auth_token[:user_id]) if decoded_auth_token 
 		# the user method will either return the user or throw an error. In Ruby, the last line of the function is implicitly returned, 
 		# so the command ends up returning the user object.
 		@user || errors.add(:token, 'Invalid token') && nil 

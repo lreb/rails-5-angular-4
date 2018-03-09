@@ -32,7 +32,7 @@ class AuthenticateUser
 	# uses the credentials to check if the user exists in the database
 	def user
 	puts "user method"
-		user = UserAccount.find_by_email(email)
+		user = Account.find_by_email(email)
 		# If everything is true, the user will be returned
 		return user if user && user.authenticate(password) #user&.authenticate?(password) #user && user.authenticate(password) 
 		# If not, the method will return nil
