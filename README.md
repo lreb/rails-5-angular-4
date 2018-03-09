@@ -33,3 +33,5 @@ https://gorails.com/deploy/ubuntu/16.04
 # issues
 ## constant unitilized
 https://github.com/rails/rails/issues/13142#issuecomment-275492070
+## rename model
+https://stackoverflow.com/questions/471416/how-do-you-write-a-migration-to-rename-an-activerecord-model-and-its-table-in-ra

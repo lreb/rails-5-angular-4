@@ -1,6 +1,6 @@
-class CreateUserAccounts < ActiveRecord::Migration[5.1]
+class CreateAccounts < ActiveRecord::Migration[5.1]
   def change
-    create_table :user_accounts do |t|
+    create_table :accounts do |t|
       t.string :email
       t.string :password_digest
       t.string :password_reminder_token
