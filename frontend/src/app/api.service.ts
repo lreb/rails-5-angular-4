@@ -1,14 +1,24 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { environment } from '../environments/environment';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
 @Injectable()
 export class ApiService {
-   API_URL = 'http://localhost:3000/';
-  // API_URL = 'http://masterapi.facware.com/';
-
-  constructor(public http: HttpClient) { }
+  API_URL: string;
+  constructor(public http: HttpClient) {
+      console.log('production: ' + environment.production);
+      if (environment.production) {
+        this.API_URL = 'http://masterapi.facware.com/';
+        console.log(this.API_URL);
+      }
+      // tslint:disable-next-line:one-line
+      else {
+        this.API_URL = 'http://localhost:3000/';
+        console.log(this.API_URL);
+      }
+   }
   /**
    * @param path HTTP GET path 'todos'
    * @return get api data

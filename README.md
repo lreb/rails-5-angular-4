@@ -29,6 +29,7 @@ rails g model Account email:string password_digest:string password_reminder_toke
 
 # sources
 https://gorails.com/deploy/ubuntu/16.04
+https://aranair.github.io/posts/2016/01/22/capistrano-postgres-rails-rvm-nginx-puma/
 
 # issues
 ## constant unitilized
